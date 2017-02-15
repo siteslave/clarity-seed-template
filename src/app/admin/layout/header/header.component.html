@@ -1,0 +1,45 @@
+<header class="header-4">
+  <div class="branding">
+    <a class="nav-link">
+      <clr-icon shape="shield"></clr-icon>
+      <span class="title">Time Attendances</span>
+    </a>
+  </div>
+  <div class="header-nav">
+    <a class=" nav-link nav-icon" routerLink='/admin/employees' routerLinkActive='active'>
+      <clr-icon shape="group"></clr-icon>
+    </a>
+    <a class=" nav-link nav-icon" routerLink='/admin/attendances' routerLinkActive='active'>
+      <clr-icon shape="bar-chart"></clr-icon>
+    </a>
+    <a class=" nav-link nav-icon" routerLink='/admin/process' routerLinkActive='active'>
+      <clr-icon shape="analytics"></clr-icon>
+    </a>
+    <a class=" nav-link nav-icon" routerLink='/admin/import' routerLinkActive='active'>
+      <clr-icon shape="import"></clr-icon>
+    </a>
+  </div>
+  <div class="header-actions">
+    <clr-dropdown class="dropdown bottom-right">
+      <button class="nav-icon" clrDropdownToggle>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+      <div class="dropdown-menu">
+        <a clrDropdownItem>About</a>
+        <a clrDropdownItem>Preferences</a>
+        <a clrDropdownItem>Log out</a>
+      </div>
+    </clr-dropdown>
+  </div>
+</header>
+<nav class="subnav">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/employees" routerLink='/admin/employees' routerLinkActive='active'>ข้อมูลพนักงาน</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/process" routerLink='/admin/process' routerLinkActive='active'>ประมวลผล</a>
+    </li>
+  </ul>
+</nav>
