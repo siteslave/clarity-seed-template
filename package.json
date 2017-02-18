@@ -6,9 +6,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "build": "ng build --prod",
+    "start:server": "node server.js"
   },
   "private": true,
   "dependencies": {
@@ -51,6 +50,13 @@
     "protractor": "~5.1.0",
     "ts-node": "1.2.1",
     "tslint": "^4.3.0",
-    "typescript": "~2.0.0"
+    "typescript": "~2.0.0",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.14.0",
+    "jade": "~1.11.0",
+    "morgan": "~1.7.0",
+    "serve-favicon": "~2.3.0"
   }
 }

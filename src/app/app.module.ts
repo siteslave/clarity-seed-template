@@ -10,10 +10,12 @@ import { ClarityModule } from 'clarity-angular';
 import { NgUploaderModule } from 'ngx-uploader';
 
 import { AppComponent } from './app.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
