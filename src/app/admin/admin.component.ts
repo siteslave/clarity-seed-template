@@ -6,11 +6,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  onlineOffline: boolean;
+  status: string;
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   logout() {
     sessionStorage.removeItem('token');
