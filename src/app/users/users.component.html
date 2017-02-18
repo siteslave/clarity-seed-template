@@ -1,3 +1,73 @@
-<p>
-  users works!
-</p>
+<clr-main-container>
+  <clr-header class="header-4">
+    <div class="branding">
+      <a class="nav-link">
+        <clr-icon shape="shield"></clr-icon>
+        <span class="title">Time Attendances</span>
+      </a>
+    </div>
+
+    <div class="header-actions">
+      <clr-dropdown class="dropdown bottom-right">
+        <button class="nav-text" clrDropdownToggle>
+          {{fullname}}
+          <clr-icon shape="caret down"></clr-icon>
+      </button>
+        <div class="dropdown-menu">
+          <!--<a clrDropdownItem routerLink="/users/profile">ข้อมูลส่วนตัว</a>-->
+          <a clrDropdownItem routerLink="/users/changepass">เปลี่ยนรหัสผ่าน</a>
+          <a clrDropdownItem (click)="logout()">ออกจากระบบ</a>
+        </div>
+      </clr-dropdown>
+    </div>
+  </clr-header>
+  <nav class="subnav">
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/users/main" routerLink='/users/main' routerLinkActive='active'>ข้อมูลสแกนลายนิ้วมือ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/users/work" routerLink='/users/work' routerLinkActive='active'>ตารางปฏิบัติงาน</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+    <nav class="sidenav" [clr-nav-level]="1">
+      <section class="sidenav-content">
+        <clr-tree-node [clrTreeNodeExpanded]="true">
+          ข้อมูลสแกนลายนิ้วมือ
+          <clr-tree-node>
+            <button class="clr-treenode-link" routerLink='/users/main' routerLinkActive='active'>
+          <clr-icon shape="history"></clr-icon>
+          สรุปสแกนลายนิ้วมือ
+        </button>
+          </clr-tree-node>
+          <clr-tree-node>
+            <button class="clr-treenode-link" routerLink='/users/work' routerLinkActive='active'>
+          <clr-icon shape="calendar"></clr-icon>
+          ตารางปฏิบัติงาน
+        </button>
+          </clr-tree-node>
+        </clr-tree-node>
+        <clr-tree-node [clrTreeNodeExpanded]="true">
+          กำหนดค่าใช้งาน
+          <!--<clr-tree-node>
+            <button class="clr-treenode-link" routerLink='/users/profile' routerLinkActive='active'>
+            <clr-icon shape="angle-double"></clr-icon>
+            แก้ไขข้อมูลส่วนตัว
+          </button>
+          </clr-tree-node>-->
+          <clr-tree-node>
+            <button class="clr-treenode-link" routerLink='/users/changepass' routerLinkActive='active'>
+            <clr-icon shape="group"></clr-icon>
+            เปลี่ยนรหัสผ่าน
+        </button>
+          </clr-tree-node>
+        </clr-tree-node>
+      </section>
+    </nav>
+  </div>
+</clr-main-container>

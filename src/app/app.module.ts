@@ -5,7 +5,9 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AdminModule } from './admin/admin.module';
 import { UsersModule } from './users/users.module';
+import { LoginModule } from './login/login.module';
 import { ClarityModule } from 'clarity-angular';
+import { NgUploaderModule } from 'ngx-uploader';
 
 import { AppComponent } from './app.component';
 
@@ -20,9 +22,13 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     UsersModule,
     AdminModule,
+    LoginModule,
+    NgUploaderModule,
     ClarityModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    {provide: 'API_URL', useValue: 'http://localhost:3001'}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

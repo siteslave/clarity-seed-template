@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
-import { HeaderComponent } from './layout/header/header.component';
-import { SidebarComponent } from './layout/sidebar/sidebar.component';
-import { MainComponent } from './layout/main/main.component';
+
+import { NgUploaderModule } from 'ngx-uploader';
 
 import { ClarityModule } from 'clarity-angular';
 import { MainPageComponent } from './main-page/main-page.component';
@@ -16,18 +17,20 @@ import { InitialPageComponent } from './initial-page/initial-page.component';
 import { DepartmentPageComponent } from './department-page/department-page.component';
 import { PositionPageComponent } from './position-page/position-page.component';
 
+import { AttendancesService } from './attendances.service';
+import { AuthModule } from '../auth/auth.module';
+import { AuthGuard } from '../auth-guard.service';
 @NgModule({
   imports: [
     CommonModule,
     AdminRoutingModule,
-    ClarityModule
+    ClarityModule,
+    NgUploaderModule,
+    FormsModule,
+    AuthModule
   ],
   declarations: [
     AdminComponent,
-    HeaderComponent,
-    SidebarComponent,
-    HeaderComponent,
-    MainComponent,
     MainPageComponent,
     EmployeePageComponent,
     ProcessPageComponent,
@@ -36,6 +39,7 @@ import { PositionPageComponent } from './position-page/position-page.component';
     InitialPageComponent,
     DepartmentPageComponent,
     PositionPageComponent
-  ]
+  ],
+  providers: [AttendancesService, AuthGuard]
 })
 export class AdminModule { }

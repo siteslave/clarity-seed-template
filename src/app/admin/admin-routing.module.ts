@@ -9,13 +9,15 @@ import { ImportPageComponent } from './import-page/import-page.component';
 import { InitialPageComponent } from './initial-page/initial-page.component';
 import { DepartmentPageComponent } from './department-page/department-page.component';
 import { PositionPageComponent } from './position-page/position-page.component';
+import { AuthGuard } from '../auth-guard.service';
 
 const routes: Routes = [
   {
     path: 'admin',
     component: AdminComponent,
+    canActivate: [AuthGuard],
     children: [
-      { path: '', component: MainPageComponent, pathMatch: 'full' },
+      { path: '', redirectTo: 'attendances', pathMatch: 'full' },
       { path: 'employees', component: EmployeePageComponent, pathMatch: 'full' },
       { path: 'attendances', component: AttendancesPageComponent, pathMatch: 'full' },
       { path: 'process', component: ProcessPageComponent, pathMatch: 'full' },

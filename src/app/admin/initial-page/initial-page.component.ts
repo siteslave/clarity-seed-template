@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AttendancesService } from '../attendances.service';
 
 @Component({
   selector: 'app-initial-page',
@@ -7,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InitialPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private attendancesService: AttendancesService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }

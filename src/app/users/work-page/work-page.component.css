@@ -1,0 +1,8 @@
+form .form-block, .form .form-block {
+    margin: 0;
+}
+
+.weekend-date {
+    color: #E62700;
+    font-weight: bold;
+}

@@ -10,6 +10,6 @@ export class AppComponent {
   title = 'app works!';
 
   constructor(private router: Router) {
-    this.router.navigate(['/admin'])
+    // this.router.navigate(['/admin'])
   }
 }

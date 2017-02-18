@@ -1,6 +1,101 @@
-<div class="main-container">
-  <app-admin-header></app-admin-header>
-  <app-admin-main>
-    <ng-content></ng-content>
-  </app-admin-main>
-</div>
+<clr-main-container>
+<clr-header class="header-4">
+  <div class="branding">
+    <a class="nav-link">
+      <clr-icon shape="shield"></clr-icon>
+      <span class="title">Time Attendances</span>
+    </a>
+  </div>
+  <div class="header-nav">
+    <a class=" nav-link nav-icon" routerLink='/admin/employees' routerLinkActive='active'>
+      <clr-icon shape="group"></clr-icon>
+    </a>
+    <a class=" nav-link nav-icon" routerLink='/admin/attendances' routerLinkActive='active'>
+      <clr-icon shape="bar-chart"></clr-icon>
+    </a>
+    <a class=" nav-link nav-icon" routerLink='/admin/process' routerLinkActive='active'>
+      <clr-icon shape="analytics"></clr-icon>
+    </a>
+    <a class=" nav-link nav-icon" routerLink='/admin/import' routerLinkActive='active'>
+      <clr-icon shape="import"></clr-icon>
+    </a>
+  </div>
+  <div class="header-actions">
+    <clr-dropdown class="dropdown bottom-right">
+      <button class="nav-icon" clrDropdownToggle>
+          <clr-icon shape="user"></clr-icon>
+          <clr-icon shape="caret down"></clr-icon>
+        </button>
+      <div class="dropdown-menu">
+        <a clrDropdownItem>เปลี่ยนรหัสผ่าน</a>
+        <a clrDropdownItem (click)="logout()">ออกจากระบบ</a>
+      </div>
+    </clr-dropdown>
+  </div>
+</clr-header>
+<nav class="subnav">
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/employees" routerLink='/admin/employees' routerLinkActive='active'>ข้อมูลพนักงาน</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/admin/process" routerLink='/admin/process' routerLinkActive='active'>ประมวลผล</a>
+    </li>
+  </ul>
+</nav>
+
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+   
+<nav class="sidenav" [clr-nav-level]="1">
+  <section class="sidenav-content">
+    <clr-tree-node [clrTreeNodeExpanded]="true">
+      ข้อมูลสแกนลายนิ้วมือ
+      <clr-tree-node>
+        <button class="clr-treenode-link" routerLink='/admin/attendances' routerLinkActive='active'>
+          <clr-icon shape="history"></clr-icon>
+          สรุปสแกนลายนิ้วมือ
+        </button>
+      </clr-tree-node>
+      <clr-tree-node>
+        <button class="clr-treenode-link" routerLink='/admin/process' routerLinkActive='active'>
+          <clr-icon shape="history"></clr-icon>
+          ประมวลผล
+        </button>
+      </clr-tree-node>
+      <clr-tree-node>
+        <button class="clr-treenode-link" routerLink='/admin/import' routerLinkActive='active'>
+            <clr-icon shape="import"></clr-icon>
+            นำเข้าข้อมูล
+          </button>
+      </clr-tree-node>
+      <clr-tree-node>
+        <button class="clr-treenode-link" routerLink='/admin/initial' routerLinkActive='active'>
+                <clr-icon shape="cog"></clr-icon>
+                กำหนดข้อมูลเริ่มต้น
+            </button>
+      </clr-tree-node>
+    </clr-tree-node>
+    <clr-tree-node [clrTreeNodeExpanded]="true">
+      กำหนดค่าใช้งาน
+      <clr-tree-node>
+        <button class="clr-treenode-link" routerLink='/admin/position' routerLinkActive='active'>
+            <clr-icon shape="angle-double"></clr-icon>
+            ข้อมูลตำแหน่ง
+          </button>
+      </clr-tree-node>
+      <clr-tree-node>
+        <button class="clr-treenode-link" routerLink='/admin/department' routerLinkActive='active'>
+            <clr-icon shape="group"></clr-icon>
+            ข้อมูลแผนก
+        </button>
+      </clr-tree-node>
+    </clr-tree-node>
+  </section>
+</nav>
+
+  </div>
+
+</clr-main-container>

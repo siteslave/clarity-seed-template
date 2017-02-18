@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AttendancesService } from '../attendances.service';
 
 @Component({
   selector: 'app-process-page',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProcessPageComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private attendancesService: AttendancesService
+  ) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
