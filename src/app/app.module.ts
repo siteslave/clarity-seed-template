@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule, HashLocationStrategy, LocationStrategy } from '@angular/common';
+
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -29,7 +31,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ClarityModule.forRoot()
   ],
   providers: [
-    {provide: 'API_URL', useValue: 'http://localhost:3001'}
+    { provide: 'API_URL', useValue: 'http://localhost:3001' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
   ],
   bootstrap: [AppComponent]
 })

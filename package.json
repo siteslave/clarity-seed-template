@@ -21,9 +21,9 @@
     "@angular/router": "^3.4.0",
     "@webcomponents/custom-elements": "^1.0.0-alpha.3",
     "angular2-jwt": "^0.1.28",
-    "clarity-angular": "^0.8.9",
-    "clarity-icons": "^0.8.9",
-    "clarity-ui": "^0.8.9",
+    "clarity-angular": "^0.8.10",
+    "clarity-icons": "^0.8.10",
+    "clarity-ui": "^0.8.10",
     "core-js": "^2.4.1",
     "lodash": "^4.17.4",
     "moment": "^2.17.1",
@@ -34,7 +34,7 @@
     "zone.js": "^0.7.2"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0-beta.32",
+    "@angular/cli": "1.0.0-rc.1",
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/lodash": "^4.14.52",
